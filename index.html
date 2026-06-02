@@ -185,7 +185,7 @@
       gap: 7px;
       border: 1px solid rgba(255, 36, 56, 0.62);
       border-radius: 999px;
-      margin: -8px 0 18px;
+      margin: 0 0 18px;
       padding: 5px 12px;
       color: #ff7b87;
       background: rgba(255, 36, 56, 0.16);
@@ -414,6 +414,11 @@
       mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIwIDdoLTIuMWMuNC0uNi42LTEuMi42LTIgMC0xLjctMS4zLTMtMy0zLTEuNCAwLTIuNC44LTMuNSAyLjVDMTAuOSAyLjggOS45IDIgOC41IDJjLTEuNyAwLTMgMS4zLTMgMyAwIC44LjIgMS40LjYgMkg0Yy0xLjEgMC0yIC45LTIgMnYyYzAgLjYuNCAxIDEgMWgxOGMuNiAwIDEtLjQgMS0xVjljMC0xLjEtLjktMi0yLTJaTTguNSA0Yy44IDAgMS40LjYgMi4yIDJIOC41Yy0uNiAwLTEtLjQtMS0xcy40LTEgMS0xWm03IDBjLjYgMCAxIC40IDEgMXMtLjQgMS0xIDFoLTIuMmMuOC0xLjQgMS40LTIgMi4yLTJaTTQgMTRoN3Y4SDZjLTEuMSAwLTItLjktMi0ydi02Wm05IDh2LThoN3Y2YzAgMS4xLS45IDItMiAyaC01WiIvPgo8L3N2Zz4K") center / contain no-repeat;
     }
 
+    .gift-gold {
+      --gift-color: #ffbd2f;
+      --gift-glow: rgba(255, 189, 47, 0.82);
+    }
+
     .gift-pink {
       --gift-color: #ff98c8;
       --gift-glow: rgba(255, 152, 200, 0.78);
@@ -467,38 +472,60 @@
     }
 
     .discord-link {
-      min-height: 70px;
-      border: 2px solid rgba(138, 159, 255, 0.82);
-      padding: 19px 24px;
-      background: linear-gradient(90deg, #121218, #303d76, #232b55);
-      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.44), 0 0 22px rgba(138, 159, 255, 0.42), inset 0 0 16px rgba(138, 159, 255, 0.25);
-      font-size: 20px;
-      text-shadow: 0 0 12px rgba(138, 159, 255, 0.8);
+      min-height: 84px;
+      border: 3px solid rgba(155, 171, 255, 0.95);
+      padding: 22px 86px 22px 28px;
+      background:
+        radial-gradient(circle at 18% 50%, rgba(138, 159, 255, 0.5), transparent 6.5rem),
+        linear-gradient(90deg, #171a34, #5865f2, #29306d);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5), 0 0 34px rgba(88, 101, 242, 0.78), inset 0 0 22px rgba(255, 255, 255, 0.18);
+      font-size: 23px;
+      letter-spacing: 0.2px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.72), 0 0 22px rgba(138, 159, 255, 0.95);
+      animation: discordSpotlight 2.8s ease-in-out infinite;
     }
 
     .discord-link::before {
       position: absolute;
-      inset: -60% -25%;
-      background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.3) 48%, transparent 66%);
+      inset: -72% -28%;
+      background: linear-gradient(115deg, transparent 28%, rgba(255, 255, 255, 0.42) 48%, transparent 68%);
       content: "";
-      opacity: 0.38;
+      opacity: 0.5;
       pointer-events: none;
       transform: translateX(-45%);
-      animation: discordSweep 4.2s ease-in-out infinite;
+      animation: discordSweep 3.4s ease-in-out infinite;
+    }
+
+    .discord-link::after {
+      position: absolute;
+      right: 14px;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.16);
+      content: "JOIN";
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.82);
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.16);
     }
 
     .discord-link .link-icon {
-      left: 12px;
+      left: 13px;
       z-index: 2;
-      width: 48px;
-      height: 48px;
-      background: rgba(138, 159, 255, 0.32);
-      filter: drop-shadow(0 0 10px rgba(138, 159, 255, 0.95));
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.18);
+      filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 16px rgba(88, 101, 242, 0.95));
     }
 
     .discord-link .link-icon img {
-      width: 32px;
-      height: 32px;
+      width: 38px;
+      height: 38px;
     }
 
     .kick-link {
@@ -749,6 +776,19 @@
       }
     }
 
+    @keyframes discordSpotlight {
+      0%,
+      100% {
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(88, 101, 242, 0.68), inset 0 0 22px rgba(255, 255, 255, 0.18);
+        transform: translateY(0);
+      }
+
+      50% {
+        box-shadow: 0 20px 34px rgba(0, 0, 0, 0.54), 0 0 42px rgba(138, 159, 255, 0.92), inset 0 0 28px rgba(255, 255, 255, 0.24);
+        transform: translateY(-4px);
+      }
+    }
+
     @keyframes livePulse {
       0% {
         opacity: 0.9;
@@ -795,19 +835,25 @@
       }
 
       .discord-link {
-        min-height: 64px;
-        padding: 17px 20px;
-        font-size: 19px;
+        min-height: 76px;
+        padding: 19px 72px 19px 22px;
+        font-size: 22px;
       }
 
       .discord-link .link-icon {
-        width: 44px;
-        height: 44px;
+        width: 50px;
+        height: 50px;
       }
 
       .discord-link .link-icon img {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
+      }
+
+      .discord-link::after {
+        right: 11px;
+        padding: 4px 7px;
+        font-size: 9px;
       }
 
       .kick-live-chip {
@@ -888,7 +934,7 @@
               <li class="leaderboard-row rank-1">
                 <span class="leaderboard-rank">1</span>
                 <span class="leaderboard-name">petah777tikva</span>
-                <span class="leaderboard-score" aria-label="49 gifts">49 <span class="leaderboard-unit gift-unit gift-pink" aria-hidden="true"></span></span>
+                <span class="leaderboard-score" aria-label="54 gifts">54 <span class="leaderboard-unit gift-unit gift-gold" aria-hidden="true"></span></span>
               </li>
               <li class="leaderboard-row rank-2">
                 <span class="leaderboard-rank">2</span>
@@ -907,32 +953,32 @@
               </li>
               <li class="leaderboard-row">
                 <span class="leaderboard-rank">5</span>
-                <span class="leaderboard-name">FrixAmit</span>
-                <span class="leaderboard-score" aria-label="13 gifts">13 <span class="leaderboard-unit gift-unit gift-purple" aria-hidden="true"></span></span>
+                <span class="leaderboard-name">Krav0n</span>
+                <span class="leaderboard-score" aria-label="14 gifts">14 <span class="leaderboard-unit gift-unit gift-purple" aria-hidden="true"></span></span>
               </li>
               <li class="leaderboard-row">
                 <span class="leaderboard-rank">6</span>
-                <span class="leaderboard-name">Nilox123</span>
+                <span class="leaderboard-name">FrixOSINT</span>
                 <span class="leaderboard-score" aria-label="13 gifts">13 <span class="leaderboard-unit gift-unit gift-purple" aria-hidden="true"></span></span>
               </li>
               <li class="leaderboard-row">
                 <span class="leaderboard-rank">7</span>
+                <span class="leaderboard-name">Nilox123</span>
+                <span class="leaderboard-score" aria-label="13 gifts">13 <span class="leaderboard-unit gift-unit gift-purple" aria-hidden="true"></span></span>
+              </li>
+              <li class="leaderboard-row">
+                <span class="leaderboard-rank">8</span>
                 <span class="leaderboard-name">AceOne</span>
                 <span class="leaderboard-score" aria-label="10 gifts">10 <span class="leaderboard-unit gift-unit gift-purple" aria-hidden="true"></span></span>
               </li>
               <li class="leaderboard-row">
-                <span class="leaderboard-rank">8</span>
+                <span class="leaderboard-rank">9</span>
                 <span class="leaderboard-name">PostB</span>
                 <span class="leaderboard-score" aria-label="10 gifts">10 <span class="leaderboard-unit gift-unit gift-purple" aria-hidden="true"></span></span>
               </li>
               <li class="leaderboard-row">
-                <span class="leaderboard-rank">9</span>
-                <span class="leaderboard-name">AmitLux</span>
-                <span class="leaderboard-score" aria-label="9 gifts">9 <span class="leaderboard-unit gift-unit gift-cyan" aria-hidden="true"></span></span>
-              </li>
-              <li class="leaderboard-row">
                 <span class="leaderboard-rank">10</span>
-                <span class="leaderboard-name">Krav0n</span>
+                <span class="leaderboard-name">TTDGCGCGC</span>
                 <span class="leaderboard-score" aria-label="9 gifts">9 <span class="leaderboard-unit gift-unit gift-cyan" aria-hidden="true"></span></span>
               </li>
             </ol>
@@ -944,12 +990,12 @@
               <li class="leaderboard-row rank-1">
                 <span class="leaderboard-rank">1</span>
                 <span class="leaderboard-name">AceOne</span>
-                <span class="leaderboard-score">8,000 <span class="leaderboard-unit kick-unit">K</span></span>
+                <span class="leaderboard-score">10,500 <span class="leaderboard-unit kick-unit">K</span></span>
               </li>
               <li class="leaderboard-row rank-2">
                 <span class="leaderboard-rank">2</span>
                 <span class="leaderboard-name">spiegkame</span>
-                <span class="leaderboard-score">4,702 <span class="leaderboard-unit kick-unit">K</span></span>
+                <span class="leaderboard-score">5,002 <span class="leaderboard-unit kick-unit">K</span></span>
               </li>
               <li class="leaderboard-row rank-3">
                 <span class="leaderboard-rank">3</span>
