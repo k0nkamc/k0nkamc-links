@@ -171,12 +171,22 @@
     }
 
     .subtitle {
-      margin: 0 0 20px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+      width: 100%;
+      margin: 0 0 18px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.5;
       text-align: center;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.92), 0 0 12px rgba(0, 210, 255, 0.32);
+    }
+
+    .subtitle-email {
+      color: #8ff4ff;
+      font-weight: 900;
+      text-decoration: none;
+      text-shadow: 0 0 10px rgba(0, 210, 255, 0.58);
+      white-space: nowrap;
     }
 
     .live-badge {
@@ -892,7 +902,10 @@
       <span class="live-dot" data-live-indicator hidden aria-hidden="true"></span>
     </a>
     <h1 id="page-title">K0nkaMc</h1>
-    <p class="subtitle">Gaming creator | Streams | Clips | Community</p>
+    <p class="subtitle" dir="rtl" lang="he">
+      מאור כהן בן 25, ריאקשנים גיימינג ולייבים יומיים. הומור, תגובות לצ'אט, סיפורים אישיים ואווירה טובה. אם בא לך לצחוק, לדבר ולהיות חלק מהלייב - הגעת למקום הנכון.
+      <span dir="ltr">Business email - <a class="subtitle-email" href="mailto:konkamc1@gmail.com">konkamc1@gmail.com</a></span>
+    </p>
     <div class="live-badge" data-live-indicator hidden aria-live="polite">Live now</div>
 
     <section class="links-container" aria-label="K0nkaMc links and info">
