@@ -117,7 +117,7 @@
       justify-content: center;
       overflow: hidden;
       background: #030006;
-      transition: opacity 0.62s ease, visibility 0.62s ease;
+      transition: opacity 0.34s ease, visibility 0.34s ease;
     }
 
     .intro-loader.is-hidden {
@@ -1503,7 +1503,7 @@
       }
 
       let introClosed = false;
-      const introDurationMs = 1000;
+      const introDurationMs = 600;
       const introTimerId = window.setTimeout(closeIntro, introDurationMs);
 
       function closeIntro() {
@@ -1520,7 +1520,7 @@
 
         window.setTimeout(() => {
           introLoader.remove();
-        }, 700);
+        }, 420);
       }
 
       introVideo.addEventListener("ended", closeIntro);
